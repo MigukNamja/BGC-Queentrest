@@ -1,0 +1,129 @@
+/* TODO: colors, fonts */
+/*
+ * black    : #000000
+ * blueberry: #4f86f7
+ * magnolia : #f8f4ff
+ * rain     : #afc3cc
+ */
+
+.main-container {
+    box-sizing: border-box;
+    font-family: system-ui;
+    font-size: 1rem;
+    background: #f8f4ff;
+    color: black;
+    text-align: center;
+    /* background-image: url(https://i.imgur.com/ZERVtnc.png);
+    background-repeat: no-repeat;
+    background-position:  center;
+    background-size: cover; */
+    height: 100%;
+}
+
+.logo {
+    font-size: 3rem;
+    /* TODO: pick a cool font! */
+}
+
+.create-account-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+  opacity: 1.0;
+}
+
+.create-account-text {
+    margin: 2px;
+    font-weight: bold;
+}
+
+.clickable {
+    padding: inherit;
+    border: none;
+    background: none;
+}
+
+.clickable:focus {
+    outline: none;
+}
+
+.hair-style-image {
+    max-height: 100px;
+    min-height: 100px;
+    border-radius: 10px;
+    margin: 2px;
+  opacity: 0.9;
+}
+
+.hair-style-image:hover {
+  opacity: 1.0;
+}
+
+}
+.selected-image {
+    border: 3px solid #4f86f7;
+}
+
+.create-account-button {
+    width: 150px;
+    margin: 5px;
+    color: white;
+    background-color: #4f86f7;
+    font-size: 1.2rem;
+}
+
+.pill {
+    min-height: 40px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 30px;
+    border-style: none;
+}
+
+.search-bar-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    height: 50px;
+    width: 70%;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.search-button {
+    height: 50px;
+    width: 50px;
+    background-color: #87cefa;
+    border-style: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.image-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 3px 20%;
+}
+
+.search-image {
+    min-height: 150px;
+    max-height: 150px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+.looks-like-me {
+    margin: 15px;
+    font-size: 1.2rem;
+}

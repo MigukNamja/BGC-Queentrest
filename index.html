@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.21/dist/shoelace/shoelace.css">
+    <title>QUEENtrest</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- Main app code  -->
+        <div class="main-container">
+
+            <!-- Logo always on top  -->
+            <button class="clickable" v-on:click="reset()">
+                <img src="https://i.imgur.com/88sDjdR.png"/>
+            </button>
+
+
+            <!-- ---------- -->
+            <!-- Onboarding -->
+            <!-- ---------- -->
+            <sl-card class="create-account-view" id="create-account-view" v-if="activeView === 'createAccount'">
+                <h3 class="create-account-text">Which hair style best fits you?</h3>
+
+                <br>
+
+                <!-- Select hair styles -->
+                <div class="image-grid">
+                    <button class="clickable" v-on:click="selectImage" v-for="(image, index) in hairTypeImages">
+                        <img class="hair-style-image" :id="index" :src="image" />
+                    </button>
+                </div>
+                <button class="create-account-button pill" v-on:click="searchView()" type="primary" size="small" pill>Submit</button>
+            </sl-card>
+
+
+            <!-- ----------- -->
+            <!-- Search View -->
+            <!-- ----------- -->
+            <div id="search-view" v-else-if="activeView === 'search'">
+
+                <!-- Search bar -->
+                <div class="search-bar-wrapper">
+                    <input class="search-bar" type="text" placeholder="Search" />
+                    <button v-on:click="showImages()" class="search-button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Filter by "looks like me" -->
+                <div class="looks-like-me">
+                    <input type="checkbox" v-on:click="filterResults" />
+                    Looks like me
+                </div>
+
+
+                <!-- Search Results -->
+                <div id="image-grid" class="image-grid invisible">
+                    <div class="search-images"></div>
+
+                    <!-- Filtered search Results -->
+                    <div class="image-container" v-for="url in searchResultsImagesFiltered" v-if="filterImages">
+                        <img class="search-image" :src="url" />
+                    </div>
+
+                    <!-- Unfiltered search Results -->
+                    <div class="image-container" v-for="url in searchResultsImagesUnfiltered" v-else>
+                        <img class="search-image" :src="url" />
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End of main app code-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.21/dist/shoelace/shoelace.esm.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
